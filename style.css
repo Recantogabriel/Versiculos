@@ -1,0 +1,150 @@
+:root {
+  --bg: #f3efe6;
+  --ink: #1f2a2e;
+  --muted: #5d6a6e;
+  --accent: #2f5d62;
+  --line: #cfc8b8;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141b1d;
+    --ink: #ece7da;
+    --muted: #9aa7aa;
+    --accent: #7fb5b9;
+    --line: #2e3a3d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+select {
+  font: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: .4rem .6rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 44rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.7rem, 4.6vw, 2.9rem);
+  line-height: 1.3;
+  letter-spacing: -.01em;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.4rem;
+  animation: reveal 1.1s ease both;
+}
+
+cite {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+.translation {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.actions {
+  display: flex;
+  gap: .75rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: .55rem 1rem;
+  transition: border-color .2s, color .2s;
+}
+
+button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.status {
+  margin-top: 1rem;
+  min-height: 1.4rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.error { color: #b3402f; }
+
+footer {
+  color: var(--muted);
+  font-size: .85rem;
+  text-align: center;
+}
+
+footer a { color: inherit; }
+
+@keyframes reveal {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  blockquote { animation: none; }
+}

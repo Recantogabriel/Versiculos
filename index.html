@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Versículo do dia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <span id="date"></span>
+  </header>
+
+  <main>
+    <blockquote id="verse" aria-live="polite">Carregando o versículo de hoje…</blockquote>
+    <cite id="reference"></cite>
+    <div class="status" id="status"></div>
+    <div class="actions">
+      <button id="copy" type="button">Copiar versículo</button>
+      <button id="share" type="button" hidden>Compartilhar</button>
+    </div>
+  </main>
+
+  <footer>
+    Um versículo novo a cada dia.
+  </footer>
+
+  <script src="./BibliaConteudo.js"></script>
+</body>
+</html>
