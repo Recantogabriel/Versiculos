@@ -41,7 +41,7 @@ let current = null;
 
 function indiceDoDia(data = new Date()) {
   const dataUtc = Date.UTC(data.getFullYear(), data.getMonth(), data.getDate());
-  return Math.floor(dataUtc / 86400000) % REFERENCES.length;
+  return Math.floor(dataUtc / 3600000) % REFERENCES.length;
 }
 
 function mostrarData() {
